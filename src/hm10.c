@@ -72,7 +72,11 @@ void _wakeUp(hm10_t *hm) {
 // Initialize the HM10 module
 void hm10_init(hm10_t *hm) {
   gpio_mode(hm->state_pin, INPUT, PULLDOWN, SPEED_HIGH);
+  gpio_mode(hm->en_pin, OUTPUT_PP, NOPULL, SPEED_HIGH);
+  // keep the "en" pin at HIGH state to avoid disturbances.
+  gpio_set(hm->en_pin);
   delay(100);
+
   hm10_reset(hm);
 }
 
