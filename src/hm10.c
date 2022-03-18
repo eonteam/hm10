@@ -4,8 +4,6 @@
 // Macros (Debug)
 // ===============================================================================
 
-#define HM10_DEBUG
-
 #ifdef HM10_DEBUG
 #define DEBUG_PRINTF pc_printf
 #else
