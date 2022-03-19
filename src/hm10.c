@@ -94,12 +94,14 @@ bool hm10_setName(hm10_t *hm, const uint8_t *name, uint8_t nameLen) {
   for (uint8_t i = 0; i < nameLen; i++) {
     xstr_push(&b, name[i]);
   }
+  xstr_push(&b, '\0');
   _sendAtCommand(hm, (const char *) b.ptr);
   xstr_clear(&b);
   xsprintf(&b, "+NAME=");
   for (uint8_t i = 0; i < nameLen; i++) {
     xstr_push(&b, name[i]);
   }
+  xstr_push(&b, '\0');
   bool ret = _expectResponse(hm, (const char *) b.ptr, SHORT_TIMEOUT);
   _wakeUp(hm);
   return ret;
