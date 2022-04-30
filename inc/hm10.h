@@ -49,7 +49,7 @@ bool hm10_setWorkType(hm10_t *hm, uint8_t workType);
 // Check if the device is connected.
 bool hm10_isConnected(hm10_t *hm);
 // Send bytes (max 20 bytes)
-void hm10_send(hm10_t *hm, uint8_t *buf, uint8_t nbytes);
+void hm10_send(hm10_t *hm, const uint8_t *buf, uint8_t nbytes);
 // Returns how many unread bytes has the HM10.
 uint16_t hm10_availableData(hm10_t *hm);
 // Returns one byte if there is data available in HM10.

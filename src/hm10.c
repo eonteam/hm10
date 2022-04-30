@@ -140,7 +140,7 @@ bool hm10_isConnected(hm10_t *hm) {
   return gpio_read(hm->state_pin) == HIGH;
 }
 // Send bytes (max 20 bytes)
-void hm10_send(hm10_t *hm, uint8_t *buf, uint8_t nbytes) {
+void hm10_send(hm10_t *hm, const uint8_t *buf, uint8_t nbytes) {
   if (!hm10_isConnected(hm)) {
     DEBUG_PRINTF("Can't send data if device is not connected");
     return;
